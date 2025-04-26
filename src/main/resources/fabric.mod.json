@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "cnstest",
+  "version": "${version}",
+  "name": "first test mod",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/cnstest/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "org.souththink.cnstest.client.CnstestDataGenerator"
+    ],
+    "client": [
+      "org.souththink.cnstest.client.CnstestClient"
+    ],
+    "main": [
+      "org.souththink.cnstest.Cnstest"
+    ]
+  },
+  "mixins": [
+    "cnstest.mixins.json",
+    {
+      "config": "cnstest.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
